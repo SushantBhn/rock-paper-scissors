@@ -29,6 +29,8 @@
             return prompt("Please enter your choice:");
         }
 
+        function playGame() {
+
         let humanScore = 0;
         let computerScore = 0;
 
@@ -37,26 +39,41 @@
             computerChoice = computerChoice.toLowerCase();
 
             if (humanChoice === computerChoice) {
-                console.log("It's a tie!");
+                console.log("It's a tie for this round!");
             } else if (humanChoice === "rock" && computerChoice === "scissors") {
-                console.log("You win!");
+                console.log("You win this round!");
                 humanScore++;
             } else if (humanChoice === "paper" && computerChoice === "rock") {
-                console.log("You win!");
+                console.log("You win this round!");
                 humanScore++;
             } else if (humanChoice === "scissors" && computerChoice === "paper") {
-                console.log("You win!");
+                console.log("You win this round!");
                 humanScore++;
             } else {
-                console.log("You lose!");
+                console.log("You lose this round!");
                 computerScore++;
             }
         }
 
+        //Loop to play 5 rounds
+        for (let i = 0; i < 5; i++) {
         const computerChoice = getComputerChoice();
         const humanChoice = getHumanChoice();
 
         playRound(humanChoice, computerChoice);
+        }
+
+        console.log("Game over!");
+        if (humanScore < computerScore) {
+            console.log("You lose the game!");
+        } else if (humanScore > computerScore) {
+            console.log("You win the game!");
+        } else {
+            console.log("It's a tie!");
+        }
+        }
+
+        playGame();
     </script>
 </body>
 </html>

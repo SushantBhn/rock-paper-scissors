@@ -1,1 +1,1 @@
-# rock-paper-scissors
+An implementation of the classic game "Rock Paper Scissors" in the console
